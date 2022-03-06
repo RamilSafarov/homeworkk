@@ -7,21 +7,26 @@ package com.t1.task4_1;
  */
 public class Execute {
     public static void main(String[] args) {
+        try{
+            QuadraticEquation y = new QuadraticEquation(5,-10,-8);
+            //y.getD();
+            if (y.getD()>0){
+                double x1 = y.getX1();
+                double x2 = y.getX2();
+                System.out.println("Первый корень уравнения x1 = " + x1 + "; " + "Второй корень уравнения x2 = " + x2 + ";");
+            }
+            else if (y.getD()==0){
+                double x = y.getX();
+                System.out.println("Единственный корень уравнения x = " + x);
+            }
+            else{
+                System.out.println("Корней нет");
+            }
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("Исключение A = 0");
+        }
 
-        QuadraticEquation y = new QuadraticEquation(0,-10,-8);
-        //y.getD();
-        if (y.getD()>0){
-            double x1 = y.getX1();
-            double x2 = y.getX2();
-            System.out.println("Первый корень уравнения x1 = " + x1 + "; " + "Второй корень уравнения x2 = " + x2 + ";");
-        }
-        else if (y.getD()==0){
-            double x = y.getX();
-            System.out.println("Единственный корень уравнения x = " + x);
-        }
-        else{
-            System.out.println("Корней нет");
-        }
         /*double a = 5;
         double b = -10;
         double c = -8;

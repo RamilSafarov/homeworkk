@@ -7,19 +7,19 @@ public class QuadraticEquation {
     private double d;
 
     public double getD (){
-        return b * b - 4 * a * c;
+        return getB() * getB() - 4 * getA() * getC();
     }
 
     public double getX (){
-        return (-b)/(2 * a);
+        return (-getB())/(2 * getA());
     }
 
     public double getX1 (){
-        return (-b - Math.sqrt(d))/ (2 * a);
+        return ((-getB() - Math.sqrt(getD()))/(2*getA()));
     }
 
     public double getX2 (){
-        return (-b + Math.sqrt(d))/ (2 * a);
+        return (-getB() + Math.sqrt(getD())) / (2 * getA());
     }
 
     public double getA() {
@@ -51,13 +51,11 @@ public class QuadraticEquation {
     }
 
     public QuadraticEquation(double a, double b, double c) throws IllegalArgumentException{
-        try{
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        }
-        catch (IllegalArgumentException e){
-            System.out.println("A = 0" + e);
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        if (this.a==0){
+            throw new IllegalArgumentException();
         }
     }
 }
