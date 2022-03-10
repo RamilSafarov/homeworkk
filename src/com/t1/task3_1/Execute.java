@@ -19,16 +19,6 @@ public class Execute {
     public static void main(String[] args) {
         ArrayList<Student> StudentArrayList = new ArrayList<>();
 
-        /*Student Student1 = new Student(2, "Коровин");
-        Student Student2 = new Student(9, "Иванов");
-        Student Student3 = new Student(10, "Петров");
-        Student Student4 = new Student(11, "Сидоров");
-        Student Student5 = new Student(9, "Григорьев");
-        Student Student6 = new Student(9, "Сергеев");
-        Student Student7 = new Student(10, "Яковлев");
-        Student Student8 = new Student(2, "Пупкин");
-        Student Student9 = new Student(1, "Васильев");*/
-
         StudentArrayList.add(new Student(2, "Коровин"));
         StudentArrayList.add(new Student(9, "Иванов"));
         StudentArrayList.add(new Student(10, "Петров"));
@@ -39,29 +29,8 @@ public class Execute {
         StudentArrayList.add(new Student(2, "Аупкин"));
         StudentArrayList.add(new Student(1, "Васильев"));
 
-        /*StudentArrayList.add(Student1);
-        StudentArrayList.add(Student2);
-        StudentArrayList.add(Student3);
-        StudentArrayList.add(Student4);
-        StudentArrayList.add(Student5);
-        StudentArrayList.add(Student6);
-        StudentArrayList.add(Student7);
-        StudentArrayList.add(Student8);
-        StudentArrayList.add(Student9);*/
-
-
-        //System.out.println(StudentArrayList);
-
-        /*for (Student h: StudentArrayList) {
-            System.out.println(h);
-        }*/
-
-        // myClassComparator = (ClassComparator) new ClassComparator().thenComparing(new NameComparator());
         Comparator<Student> myClassComparator = new ClassComparator().thenComparing(new NameComparator());
         StudentArrayList.sort(myClassComparator);
-
-       /* NameComparator myNameComparator = new NameComparator();
-        StudentArrayList.sort(myNameComparator);*/
 
         System.out.println("Отсортированы : ");
         for (Student h: StudentArrayList) {
